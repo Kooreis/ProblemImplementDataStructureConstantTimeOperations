@@ -1,13 +1,16 @@
-using System;
-using System.Collections.Generic;
-
-public class Node
+public class AllOne
 {
-    public int val;
-    public HashSet<string> keys = new HashSet<string>();
-    public Node prev, next;
-    public Node(int val)
+    private Dictionary<string, int> dict;
+    private Dictionary<int, Node> nodes;
+    private Node head, tail;
+
+    public AllOne()
     {
-        this.val = val;
+        dict = new Dictionary<string, int>();
+        nodes = new Dictionary<int, Node>();
+        head = new Node(int.MinValue);
+        tail = new Node(int.MaxValue);
+        head.next = tail;
+        tail.prev = head;
     }
 }
