@@ -1,15 +1,14 @@
-import java.util.*;
+class CustomDataStructure {
+    private Node head, tail;
+    private Map<String, Node> countNodeMap;
+    private Map<String, Integer> keyCountMap;
 
-public class Main {
-    public static void main(String[] args) {
-        CustomDataStructure ds = new CustomDataStructure();
-        ds.increment("apple");
-        ds.increment("banana");
-        ds.increment("apple");
-        System.out.println(ds.getMaxKey());
-        System.out.println(ds.getMinKey());
-        ds.decrement("apple");
-        System.out.println(ds.getMaxKey());
-        System.out.println(ds.getMinKey());
+    public CustomDataStructure() {
+        this.head = new Node(0);
+        this.tail = new Node(0);
+        this.head.next = this.tail;
+        this.tail.prev = this.head;
+        this.countNodeMap = new HashMap<>();
+        this.keyCountMap = new HashMap<>();
+        this.countNodeMap.put(0, this.head);
     }
-}
